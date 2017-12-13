@@ -3,10 +3,7 @@
     "users": {
       "$uid": {
         ".read": "auth.uid === $uid",
-        ".write": "auth.uid === $uid",
-        "messages": {
-          ".indexOn": ["category"]
-        }
+        ".write": "auth.uid === $uid"
       }
     }
   }
