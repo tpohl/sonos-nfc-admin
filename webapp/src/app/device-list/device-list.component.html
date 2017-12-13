@@ -1,0 +1,66 @@
+<div class="container">
+  <section>
+    <p class="title">Choose your Device</p>
+
+    <div class="card" *ngFor="let device of devices | async">
+      <header class="card-header">
+        <p class="card-header-title">
+          {{device?.device?.name}}
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          This is a SONOS Player Device you can update the settings for and use to tag new Cards.
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a [routerLink]="['/manage', device.key]" class="card-footer-item">Manage</a>
+      </footer>
+    </div>
+  </section>
+  <section>
+    <p class="subtitle">Add another Device?</p>
+    <button (click)="claimOpen = true" class="button is-success is-block is-large" [ngClass]="{'is-invisible': claimOpen}">Claim Device</button>
+  </section>
+  <div class="modal" [ngClass]="{'is-active': claimOpen}">
+    <div class="modal-background" (click)="claimOpen = false"></div>
+    <div class="modal-content">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Claim a Device
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <!--
+            <div class="field">
+              <label class="label">Particle Token</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="newDevice.token" placeholder="Fill in your token">
+              </div>
+            </div>
+            -->
+            <div class="field">
+              <label class="label">Device ID</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="newDevice.deviceId" placeholder="Fill in your Device ID">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Device Name</label>
+              <div class="control">
+                <input class="input" type="text" [(ngModel)]="newDevice.name" placeholder="Fill in your Device Name">
+              </div>
+            </div>
+            <div class="control">
+              <button (click)="claimDevice()" class="button is-success">Claim Device</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="claimOpen = false"></button>
+  </div>
+
+</div>

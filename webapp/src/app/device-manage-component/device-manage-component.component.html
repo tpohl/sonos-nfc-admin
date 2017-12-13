@@ -1,0 +1,77 @@
+<div class="container">
+  <p class="title">
+    Device {{configuration.name}}
+  </p>
+  <p>
+    You can write new playlists to your device here or update your room.
+  </p>
+  <section class="section">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Write a tag
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p>Enter the playlist you want to play with the nfc chip. Then press the magic ward to active tagging mode.</p>
+          <p>Your device will light up red to indicate write mode. The next tag presented will be written to activate the playlist.</p>
+          <p>After writing the playlist the device will light up blue.</p>
+          <label class="label">Playlist-Name</label>
+          <div class="field ">
+            <div class="control is-expanded">
+              <input class="input" type="text" [(ngModel)]="playlist" placeholder="Enter playlist name">
+            </div>
+          </div>
+          <div class="control">
+            <button (click)="writeTag()" class="button is-danger">
+              <i class="fa fa-magic" aria-hidden="true"></i> Write this tag.
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="section">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Configuration
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p>Update the configuration of your Device. If your device is online, your current configuration should be loaded
+            automatically.</p>
+          <label class="label">Room</label>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input class="input" type="text" [(ngModel)]="room">
+            </div>
+            <div class="control">
+              <button (click)="loadRoomName()" class="button is-info">Load</button>
+            </div>
+            <div class="control">
+              <button (click)="writeRoomName()" class="button is-danger">Update</button>
+            </div>
+          </div>
+
+          <label class="label">API Host</label>
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input class="input" type="text" [(ngModel)]="apiHost">
+            </div>
+            <div class="control">
+              <button (click)="loadApiHost()" class="button is-info">Load</button>
+            </div>
+            <div class="control">
+              <button (click)="writeApiHost()" class="button is-danger">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>

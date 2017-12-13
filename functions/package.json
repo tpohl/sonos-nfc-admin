@@ -1,0 +1,12 @@
+{
+  "name": "functions",
+  "description": "Manage Particle Devices",
+  "dependencies": {
+    "express": "^4.15.2",
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "private": true
+}
