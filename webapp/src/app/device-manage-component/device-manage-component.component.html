@@ -20,7 +20,7 @@
           <label class="label">Playlist-Name</label>
           <div class="field ">
             <div class="control is-expanded">
-              <input class="input" type="text" [(ngModel)]="playlist" placeholder="Enter playlist name">
+              <input class="input" type="text" [(ngModel)]="playlist" placeholder="Enter playlist name" (keyup.enter)="writeTag()">
             </div>
           </div>
           <div class="control">
